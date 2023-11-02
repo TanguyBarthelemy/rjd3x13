@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">rjd3x13</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
 <span>  userdefined <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">fast_x13</span><span class="op">(</span></span>
+<span><span class="fu">x13_fast</span><span class="op">(</span></span>
 <span>  <span class="va">ts</span>,</span>
 <span>  spec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rsa4"</span>, <span class="st">"rsa0"</span>, <span class="st">"rsa1"</span>, <span class="st">"rsa2c"</span>, <span class="st">"rsa3"</span>, <span class="st">"rsa5c"</span><span class="op">)</span>,</span>
 <span>  context <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -85,24 +85,24 @@
 
 
 <dt>userdefined</dt>
-<dd><p>a vector containing additional output variables.</p></dd>
+<dd><p>a vector containing additional output variables (see <code><a href="x13_dictionary.html">x13_dictionary()</a></code>).</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>the <code>x13()</code> function returns a list with the results, the estimation specification and the result specification, while <code>fast_x13()</code> is a faster function that only returns the results.
+<p>the <code>x13()</code> function returns a list with the results, the estimation specification and the result specification, while <code>x13_fast()</code> is a faster function that only returns the results.
 The <code>jx13()</code> functions only returns results in a java object which will allow to customize outputs in other packages (use <code><a href="https://rdrr.io/pkg/rjd3toolkit/man/dictionary.html" class="external-link">rjd3toolkit::dictionary()</a></code> to
 get the list of variables and <code><a href="https://rdrr.io/pkg/rjd3toolkit/man/dictionary.html" class="external-link">rjd3toolkit::result()</a></code> to get a specific variable).
-In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you can directly use a specification name (string)
-#' If you want to customize a specification you have to create a specification object first</p>
+In the estimation functions <code>x13()</code> and <code>x13_fast()</code> you can directly use a specification name (string).
+If you want to customize a specification you have to create a specification object first.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">y</span> <span class="op">=</span> <span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="va">ABS</span><span class="op">$</span><span class="va">X0.2.09.10.M</span></span></span>
-<span class="r-in"><span><span class="fu">fast_x13</span><span class="op">(</span><span class="va">y</span>,<span class="st">"rsa3"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">x13_fast</span><span class="op">(</span><span class="va">y</span>,<span class="st">"rsa3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> RegARIMA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Log-transformation: yes </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SARIMA model:  (2,1,1) (0,1,1)</span>
@@ -177,19 +177,19 @@ In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you c
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Final</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend seas       irr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1558.700 1547.466    1 1.0072601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1539.619 1543.359    1 0.9975766</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1540.423 1541.287    1 0.9994390</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1561.106 1541.060    1 1.0130078</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1513.071 1542.061    1 0.9812005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1538.709 1543.697    1 0.9967689</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.681 1545.484    1 0.9917157</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1609.073 1547.232    1 1.0399684</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1563.830 1548.782    1 1.0097158</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1561.361 1549.791    1 1.0074658</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1519.197 1550.206    1 0.9799965</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.064 1550.306    1 1.0024242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend      seas       irr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1558.700 1547.466 0.8940140 1.0072601</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1539.619 1543.359 0.9725785 0.9975766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1540.423 1541.287 1.0934011 0.9994390</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1561.106 1541.060 1.8258848 1.0130078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1513.071 1542.061 0.9441065 0.9812005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1538.709 1543.697 0.7099456 0.9967689</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.681 1545.484 0.8940545 0.9917157</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1609.073 1547.232 0.9462594 1.0399684</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1563.830 1548.782 0.9287456 1.0097158</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1561.361 1549.791 0.9973351 1.0074658</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1519.197 1550.206 0.9514898 0.9799965</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.064 1550.306 0.8385112 1.0024242</span>
 <span class="r-in"><span><span class="fu">x13</span><span class="op">(</span><span class="va">y</span>,<span class="st">"rsa5c"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> RegARIMA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Log-transformation: yes </span>
@@ -271,20 +271,20 @@ In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you c
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Final</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend seas       irr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1544.956 1548.898    1 0.9974547</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1569.404 1547.139    1 1.0143910</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1523.294 1546.637    1 0.9849077</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1536.881 1546.937    1 0.9934994</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1547.497 1547.656    1 0.9998970</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1545.588 1548.350    1 0.9982164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1556.927 1548.747    1 1.0052818</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1587.924 1548.518    1 1.0254473</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1555.232 1547.335    1 1.0051038</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1539.880 1545.271    1 0.9965115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1532.110 1542.807    1 0.9930664</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1524.546 1540.399    1 0.9897086</span>
-<span class="r-in"><span><span class="fu"><a href="regarima.html">fast_regarima</a></span><span class="op">(</span><span class="va">y</span>,<span class="st">"rg0"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend      seas       irr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1544.956 1548.898 0.9019675 0.9974547</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1569.404 1547.139 0.9541202 1.0143910</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1523.294 1546.637 1.1056957 0.9849077</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1536.881 1546.937 1.8546651 0.9934994</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1547.497 1547.656 0.9231038 0.9998970</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1545.588 1548.350 0.7067860 0.9982164</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1556.927 1548.747 0.8801312 1.0052818</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1587.924 1548.518 0.9588622 1.0254473</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1555.232 1547.335 0.9338798 1.0051038</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1539.880 1545.271 1.0112477 0.9965115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1532.110 1542.807 0.9434701 0.9930664</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1524.546 1540.399 0.8547462 0.9897086</span>
+<span class="r-in"><span><span class="fu"><a href="regarima.html">regarima_fast</a></span><span class="op">(</span><span class="va">y</span>,<span class="st">"rg0"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Log-transformation: no </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SARIMA model:  (0,1,1) (0,1,1)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -332,7 +332,7 @@ In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you c
 <span class="r-out co"><span class="r-pr">#&gt;</span> BIC:  4336.962 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">sp</span> <span class="op">=</span> <span class="fu"><a href="spec_x13.html">spec_x13</a></span><span class="op">(</span><span class="st">"rsa5c"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sp</span> <span class="op">=</span> <span class="fu"><a href="x13_spec.html">x13_spec</a></span><span class="op">(</span><span class="st">"rsa5c"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">sp</span> <span class="op">=</span> <span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rjd3toolkit/man/add_outlier.html" class="external-link">add_outlier</a></span><span class="op">(</span><span class="va">sp</span>,</span></span>
 <span class="r-in"><span>                 type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"AO"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2015-01-01"</span>, <span class="st">"2010-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">sp</span> <span class="op">=</span>  <span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rjd3toolkit/man/set_transform.html" class="external-link">set_transform</a></span><span class="op">(</span></span></span>
@@ -422,22 +422,22 @@ In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you c
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Final</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend seas        irr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1567.439 1554.386    0  13.052790</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1547.052 1551.116    0  -4.064205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1544.888 1549.070    0  -4.182012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1560.255 1548.078    0  12.177219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1529.584 1547.770    0 -18.185622</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1552.751 1547.915    0   4.835817</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.112 1548.227    0 -16.114386</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1571.429 1548.386    0  23.042779</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1554.351 1548.282    0   6.069336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1548.139 1547.682    0   0.456243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1540.321 1546.422    0  -6.101117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.506 1544.648    0   9.857735</span>
-<span class="r-in"><span><span class="va">sp</span> <span class="op">=</span> <span class="fu"><a href="spec_x11.html">set_x11</a></span><span class="op">(</span><span class="va">sp</span>,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend        seas        irr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1567.439 1554.386 -173.938673  13.052790</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1547.052 1551.116  -49.651713  -4.064205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1544.888 1549.070  139.411575  -4.182012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1560.255 1548.078 1290.145096  12.177219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1529.584 1547.770 -101.084412 -18.185622</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1552.751 1547.915 -460.350943   4.835817</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.112 1548.227 -161.812246 -16.114386</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1571.429 1548.386  -48.829077  23.042779</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1554.351 1548.282 -101.951014   6.069336</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1548.139 1547.682    9.061423   0.456243</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1540.321 1546.422  -94.820887  -6.101117</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.506 1544.648 -251.405622   9.857735</span>
+<span class="r-in"><span><span class="va">sp</span> <span class="op">=</span> <span class="fu"><a href="x11_spec.html">set_x11</a></span><span class="op">(</span><span class="va">sp</span>,</span></span>
 <span class="r-in"><span>             henderson.filter <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">fast_x13</span><span class="op">(</span><span class="va">y</span>, spec <span class="op">=</span> <span class="va">sp</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">x13_fast</span><span class="op">(</span><span class="va">y</span>, spec <span class="op">=</span> <span class="va">sp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> RegARIMA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Log-transformation: no </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SARIMA model:  (3,1,1) (0,1,1)</span>
@@ -517,19 +517,19 @@ In the estimation functions <code>x13()</code> and <code>fast_x13()</code> you c
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Final</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend seas        irr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1567.255 1554.069    0  13.186079</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1547.824 1551.331    0  -3.506850</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1546.128 1548.057    0  -1.929197</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1557.769 1545.941    0  11.828053</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1530.142 1545.777    0 -15.634829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1552.860 1546.573    0   6.287131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.029 1548.853    0 -16.824581</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1571.073 1551.472    0  19.601512</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1554.849 1552.698    0   2.151163</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1550.052 1552.154    0  -2.102681</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1541.002 1549.653    0  -8.650144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.802 1545.625    0   9.176569</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          series       sa    trend        seas        irr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sep 2016 1393.5 1567.255 1554.069 -173.754955  13.186079</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Oct 2016 1497.4 1547.824 1551.331  -50.424459  -3.506850</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Nov 2016 1684.3 1546.128 1548.057  138.172189  -1.929197</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dec 2016 2850.4 1557.769 1545.941 1292.630528  11.828053</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jan 2017 1428.5 1530.142 1545.777 -101.642006 -15.634829</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Feb 2017 1092.4 1552.860 1546.573 -460.459760   6.287131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.3 1532.029 1548.853 -161.728778 -16.824581</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1522.6 1571.073 1551.472  -48.473184  19.601512</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.4 1554.849 1552.698 -102.448692   2.151163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.2 1550.052 1552.154    7.148413  -2.102681</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1445.5 1541.002 1549.653  -95.502435  -8.650144</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.1 1554.802 1545.625 -251.702019   9.176569</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -1,9 +1,9 @@
-pandoc: 3.1.1
+pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-07-12T15:38Z
+last_built: 2023-11-02T10:12Z
 urls:
-  reference: https://tanguybarthelemy.github.io/rjd3x13/reference
-  article: https://tanguybarthelemy.github.io/rjd3x13/articles
+  reference: https://rjdemetra.github.io/rjd3x13/reference
+  article: https://rjdemetra.github.io/rjd3x13/articles
 

@@ -14,7 +14,7 @@ in a domain of constraints. See details and examples."><!-- mathjax --><script s
     
     <a class="navbar-brand me-2" href="../index.html">rjd3x13</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,31 +78,33 @@ in a domain of constraints. See details and examples.</p>
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>spec</dt>
-<dd><p>the current specification to be refreshed ("result_spec")</p></dd>
+<dd><p>the current specification to be refreshed (<code>"result_spec"</code>).</p></dd>
 
 
 <dt>refspec</dt>
-<dd><p>the reference specification used to define the domain considered for re-estimation ("domain_spec")
+<dd><p>the reference specification used to define the domain considered for re-estimation (<code>"domain_spec"</code>).
 By default this is the <code>"RG5c"</code> or <code>"RSA5"</code> specification.</p></dd>
 
 
 <dt>policy</dt>
-<dd><p>the refresh policy to apply (see details)</p></dd>
+<dd><p>the refresh policy to apply (see details).</p></dd>
 
 
 <dt>period, start, end</dt>
-<dd><p>to specify the span on which outliers will be re-identified when <code>policy</code> equals to <code>"Outliers"</code>
-or <code>"Outliers_StochasticComponent"</code>. Span definition: <code>period</code>: numeric, number of observations in a year (12,4...). <code>start</code>: vector
-indicating the start of the series in the format c(YYYY,MM). <code>end</code>: vector in the format c(YYYY,MM) indicating the date from which outliers
-will be re-identified. If span parameters are not specified outliers will be re-detected on the whole series.</p></dd>
+<dd><p>to specify the span on which outliers will not be re-identified (i.e.: re-detected) when <code>policy = "Outliers"</code>
+or <code>policy = "Outliers_StochasticComponent"</code>.
+Span definition: <code>period</code>: numeric, number of observations in a year (12, 4...).
+<code>start</code> and <code>end</code>: first and last date from which outliers will not be re-identfied,
+defined as arrays of two elements: year and first period (for example, if <code>period = 12</code>, <code>c(1980, 1)</code> for January 1980).
+If they are not specified, the outliers will be re-identified on the whole series.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a new specification, an object of class <code>"JD3_X13_SPEC"</code> (<code><a href="spec_x13.html">spec_x13()</a></code>),
-<code>"JD3_REGARIMA_SPEC"</code> (<code><a href="spec_x13.html">spec_regarima()</a></code>)</p>
+<p>a new specification, an object of class <code>"JD3_X13_SPEC"</code> or
+<code>"JD3_REGARIMA_SPEC"</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -114,8 +116,8 @@ keeping all the user-defined parameters from the original specification.</p>
 <p><strong>Current</strong>: applying the current pre-adjustment reg-arima model and adding the new raw data points as Additive Outliers (defined as new intervention variables)</p>
 <p><strong>Fixed</strong>: applying the current pre-adjustment reg-arima model and replacing forecasts by new raw data points.</p>
 <p><strong>FixedParameters</strong>: pre-adjustment reg-arima model is partially modified: regression coefficients will be re-estimated but regression variables, Arima orders
-and coefficients are unchanged.
-<strong>FixedAutoRegressiveParameters</strong>: same as FixedParameters but Arima Moving Average coefficients (MA) are also re-estimated, Auto-regressive (AR) coefficients are kept fixed.</p>
+and coefficients are unchanged.</p>
+<p><strong>FixedAutoRegressiveParameters</strong>: same as FixedParameters but Arima Moving Average coefficients (MA) are also re-estimated, Auto-regressive (AR) coefficients are kept fixed.</p>
 <p><strong>FreeParameters</strong>: all regression and Arima model coefficients are re-estimated, regression variables and Arima orders are kept fixed.</p>
 <p><strong>Outliers</strong>: regression variables and Arima orders are kept fixed, but outliers will be re-detected on the defined span, thus all regression and Arima model coefficients are re-estimated</p>
 <p><strong>Outliers_StochasticComponent</strong>: same as "Outliers" but Arima model orders (p,d,q)(P,D,Q) can also be re-identified.</p>
@@ -134,9 +136,9 @@ and coefficients are unchanged.
 <span class="r-in"><span><span class="co"># raw series for second (refreshed) estimation</span></span></span>
 <span class="r-in"><span><span class="va">y_new</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/window.html" class="external-link">window</a></span><span class="op">(</span><span class="va">y</span>,end <span class="op">=</span> <span class="fl">2010</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># specification for first estimation</span></span></span>
-<span class="r-in"><span><span class="va">spec_x13_1</span><span class="op">&lt;-</span><span class="fu"><a href="spec_x13.html">spec_x13</a></span><span class="op">(</span><span class="st">"rsa5c"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">spec_x13_1</span><span class="op">&lt;-</span><span class="fu"><a href="x13_spec.html">x13_spec</a></span><span class="op">(</span><span class="st">"rsa5c"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># first estimation</span></span></span>
-<span class="r-in"><span><span class="va">sa_x13</span><span class="op">&lt;-</span> <span class="fu">rjd3x13</span><span class="fu">::</span><span class="fu"><a href="x13.html">x13</a></span><span class="op">(</span><span class="va">y_raw</span>, <span class="va">spec_x13_1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sa_x13</span><span class="op">&lt;-</span> <span class="fu"><a href="x13.html">x13</a></span><span class="op">(</span><span class="va">y_raw</span>, <span class="va">spec_x13_1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># refreshing the specification</span></span></span>
 <span class="r-in"><span><span class="va">current_result_spec</span> <span class="op">&lt;-</span> <span class="va">sa_x13</span><span class="op">$</span><span class="va">result_spec</span></span></span>
 <span class="r-in"><span><span class="va">current_domain_spec</span> <span class="op">&lt;-</span> <span class="va">sa_x13</span><span class="op">$</span><span class="va">estimation_spec</span></span></span>
