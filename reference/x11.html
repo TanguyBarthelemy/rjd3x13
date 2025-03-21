@@ -64,38 +64,10 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="va"><a href="https://rjdverse.github.io/rjd3toolkit/reference/ABS.html" class="external-link">ABS</a></span><span class="op">$</span><span class="va">X0.2.09.10.M</span></span></span>
 <span class="r-in"><span><span class="va">x11_spec</span> <span class="op">&lt;-</span> <span class="fu"><a href="x13_spec.html">x11_spec</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">x11</span><span class="op">(</span><span class="va">y</span>, <span class="va">x11_spec</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                d1 d2 d4        d5       d6       d7        d8        d9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.300 NA NA 0.8961795 1529.046 1549.437 0.8843860       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1508.745 NA NA 0.9370285 1610.138 1551.362 0.9814599 0.9725289</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.400 NA NA 0.9240579 1571.763 1552.613 0.9354553       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.200 NA NA 0.9906046 1571.969 1554.256 1.0018939       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1451.753 NA NA 0.9669725 1501.339 1554.036 0.9301585 0.9341824</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.100 NA NA 0.8370380 1556.799 1554.112 0.8384851       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                d10      d11      d12       d13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 0.8911974 1537.594 1549.121 0.9925591</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 0.9472835 1607.333 1550.650 1.0365542</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 0.9277056 1565.583 1551.579 1.0090258</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 0.9945226 1565.776 1552.914 1.0082826</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 0.9598855 1505.909 1552.756 0.9698294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 0.8381839 1554.671 1552.438 1.0014382</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> '.add_ud_var' is not an exported object from 'namespace:rjd3toolkit'</span>
 <span class="r-in"><span><span class="va">x11_spec</span> <span class="op">&lt;-</span> <span class="fu"><a href="x11_spec.html">set_x11</a></span><span class="op">(</span><span class="va">x11_spec</span>, henderson.filter <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">x11</span><span class="op">(</span><span class="va">y</span>, <span class="va">x11_spec</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Last values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                d1 d2 d4        d5       d6       d7        d8        d9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 1370.300 NA NA 0.8957968 1529.700 1556.611 0.8803097       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 1521.625 NA NA 0.9391175 1620.271 1562.636 0.9743791 0.9737554</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 1452.400 NA NA 0.9239661 1571.919 1563.794 0.9287669       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 1557.200 NA NA 0.9916495 1570.313 1560.504 0.9978827       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 1453.790 NA NA 0.9669146 1503.535 1555.034 0.9295618 0.9348928</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 1303.100 NA NA 0.8369658 1556.933 1547.539 0.8420469       NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                d10      d11      d12       d13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Mar 2017 0.8899565 1539.738 1556.256 0.9893865</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Apr 2017 0.9498667 1602.962 1560.758 1.0270404</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> May 2017 0.9267578 1567.184 1560.959 1.0039883</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jun 2017 0.9952607 1564.615 1557.551 1.0045354</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Jul 2017 0.9607704 1504.522 1552.689 0.9689783</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Aug 2017 0.8393622 1552.488 1545.113 1.0047731</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> '.add_ud_var' is not an exported object from 'namespace:rjd3toolkit'</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
