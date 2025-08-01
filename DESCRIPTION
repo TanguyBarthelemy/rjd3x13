@@ -19,7 +19,7 @@ URL: https://github.com/rjdverse/rjd3x13,
     https://rjdverse.github.io/rjd3x13/
 BugReports: https://github.com/rjdverse/rjd3x13/issues
 Depends:
-    R (>= 4.1.0)
+    R (>= 4.0)
 Imports:
     rJava (>= 1.0-6),
     rjd3toolkit (>= 3.5.1),
