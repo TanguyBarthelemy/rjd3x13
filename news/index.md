@@ -14,7 +14,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 #### Changed
 
-- New JARS
+- New JARS related to version
+  [3.7.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.7.1)
 
 ### [3.6.0](https://github.com/rjdverse/rjd3x13/compare/v3.5.1...v3.6.0) - 2025-11-21
 
@@ -25,11 +26,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Documentation of `Complete` policy
   [\#86](https://github.com/rjdverse/rjd3x13/issues/86)
 
+#### Changed
+
+- New JARS related to version
+  [3.6.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.6.0)
+
 ### [3.5.1](https://github.com/rjdverse/rjd3x13/compare/v3.5.0...v3.5.1) - 2025-06-16
 
 #### Changed
 
-- New java libraries
+- New JARS related to version
+  [3.5.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.5.1)
 
 #### Added
 
@@ -40,6 +47,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### [3.5.0](https://github.com/rjdverse/rjd3x13/compare/v3.3.0...v3.5.0) - 2025-04-09
 
+#### Changed
+
+- New JARS related to version
+  [3.5.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.5.0)
+
 #### Removed
 
 - `.add_ud_var` has been transfered to {rjd3toolkit}
@@ -48,19 +60,41 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 #### Changed
 
-- New java libraries
+- New JARS related to version
+  [3.3.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.3.0)
 
 ### [3.2.3](https://github.com/rjdverse/rjd3x13/compare/v3.2.2...v3.2.3) - 2024-07-12
 
 #### Changed
 
-- New .jar (related to release)
+- New JARS related to version
+  [3.2.3](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.3)
 - Some linting of R functions
 
 ### [3.2.2](https://github.com/rjdverse/rjd3x13/compare/v3.2.1...v3.2.2) - 2024-03-15
 
+#### Changed
+
+- New JARS related to version
+  [3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2)
+
 ### [3.2.1](https://github.com/rjdverse/rjd3x13/compare/v3.2.0...v3.2.1) - 2023-12-12
+
+#### Changed
+
+- New JARS related to version
+  [3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1)
 
 ### [3.2.0](https://github.com/rjdverse/rjd3x13/compare/v3.1.0...v3.2.0) - 2023-11-24
 
+#### Changed
+
+- New JARS related to version
+  [3.2.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.0)
+
 ### [3.1.0](https://github.com/rjdverse/rjd3x13/releases/tag/v3.1.0) - 2023-08-11
+
+#### Added
+
+- New JARS related to version
+  [3.1.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.0)
