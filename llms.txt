@@ -49,7 +49,7 @@ a configuration in R is explained
 
 **🎉 {rjd3x13} is now available on CRAN! 🎉**
 
-To install it, you have to launch the following command line:
+To install it, just launch the following command line:
 
 ``` r
 install.packages("rjd3x13")
@@ -64,6 +64,8 @@ remotes::install_github("rjdverse/rjd3x13")
 ```
 
 ## Usage
+
+Seasonal adjustment with X13-Arima
 
 ``` r
 library("rjd3x13")
