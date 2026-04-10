@@ -34,6 +34,7 @@ information on object format and description.
 ## Examples
 
 ``` r
+library("rjd3toolkit")
 # \donttest{
 # Visualize the dictionary
 print(x13_dictionary())
@@ -411,7 +412,7 @@ user_defined_output
 #> [1] "residuals.kurtosis" "ylin"               "sa_f"              
 
 # Generate the corresponding output in an estimation
-y <- rjd3toolkit::ABS$X0.2.09.10.M
+y <- ABS$X0.2.09.10.M
 m <- x13(y,"rsa3", userdefined=user_defined_output)
 
 # Retrieve user defined output
