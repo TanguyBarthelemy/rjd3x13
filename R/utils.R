@@ -15,7 +15,6 @@ NULL
 NULL
 #> NULL
 
-
 identical_na <- function(x) {
     identical(x, NA) ||
         identical(x, NA_character_) ||
