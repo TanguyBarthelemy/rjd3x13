@@ -25,13 +25,18 @@ set_x11(
 \item{x}{the specification to be modified, object of class "JD3_X11_SPEC",
 default X11 spec can be obtained as 'x=x11_spec()'}
 
-\item{mode}{character: the decomposition mode in X11. Determines the mode of the
-seasonal adjustment decomposition to be performed:
+\item{mode}{character: the decomposition mode in X11. Determines the mode of
+the seasonal adjustment decomposition to be performed:
 If a pre-adjustment is performed mode is inherited:
 \itemize{
-\item if log transformation in pre-adjustment, X11 \code{mode} is \code{"Multiplicative"} by default (or can also  be \code{"LogAdditive"} if set by the user)
-\item if no log transformation, X11 \code{mode} is \code{"Additive"} by default (or can also be \code{"PseudoAdditive"} if set by the user)
-\item If NO pre-adjustment is performed, just X-11 decomposition using 'x=x11_spec()' spec, mode is \code{"Multiplicative"} by default, it can be set to \code{"Additive"}, \code{"LogAdditive"}, \code{"PseudoAdditive"} (could be changed by the program, if needed).
+\item if log transformation in pre-adjustment, X11 \code{mode} is \code{"Multiplicative"}
+by default (or can also  be \code{"LogAdditive"} if set by the user)
+\item if no log transformation, X11 \code{mode} is \code{"Additive"} by default (or can
+also be \code{"PseudoAdditive"} if set by the user)
+\item If NO pre-adjustment is performed, just X-11 decomposition using
+\code{x = x11_spec()} spec, mode is \code{"Multiplicative"} by default, it can be
+set to \code{"Additive"}, \code{"LogAdditive"}, \code{"PseudoAdditive"} (could be
+changed by the program, if needed).
 If set to \code{"Undefined"} an additive decomposition is performed, see details.
 }}
 
@@ -72,8 +77,8 @@ irregulars (\code{"None"}, default value); separately for each calendar period
 determines that the irregular component is heteroskedastic by calendar
 month/quarter (\code{"Signif"}); separately for two complementary sets of calendar
 months/quarters specified by the x11.sigmaVector parameter (\code{"Select"}, see
-parameter \code{sigma.vector}).If \code{sigma.vector} is specified then \code{calendar.sigma} is set to
-"Select"`.}
+parameter \code{sigma.vector}).If \code{sigma.vector} is specified then
+\code{calendar.sigma} is set to "Select"`.}
 
 \item{sigma.vector}{a vector to specify one of the two groups of periods for
 which standard errors used for extreme values detection and adjustment will
@@ -84,8 +89,9 @@ be computed separately. Possible values are: \code{1} or \code{2}.}
 detection of extreme values in the seasonal adjustment routines.
 Default = FALSE.}
 
-\item{bias}{If \code{mode = "LogAdditive"} (only in this case) a correction is applied when computing final
-components (S, T, I) in level from components estimated in log.
+\item{bias}{If \code{mode = "LogAdditive"} (only in this case) a correction is
+applied when computing final components (S, T, I) in level from components
+estimated in log.
 Then \code{bias= "RATIO"} (default) Average of S (on complete years)
 and I (on the whole series) is set to 1, the correction is allocated to T.).
 \code{"LEGACY"} or \code{"SMOOTH"} corrections are based on trend filters.}
@@ -97,7 +103,8 @@ a "JD3_X11_SPEC" object, containing all the parameters.
 Set X-11 Specification
 }
 \details{
-Decomposition mode formulas (Y: raw series, T: trend, S: seasonal, I: Irregular, SA: seasonally
+Decomposition mode formulas (Y: raw series, T: trend, S: seasonal,
+I: Irregular, SA: seasonally
 adjusted series)
 \itemize{
 \item Additive: \code{Y=T+S+I}, \code{SA =Y-S=T+I}

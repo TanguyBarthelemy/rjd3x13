@@ -47,7 +47,7 @@ print_diagnostics <- function(
                 stats::printCoefmat(
                     residual_tests[, "P.value", drop = FALSE],
                     digits = digits,
-                    na.print = "NA", 
+                    na.print = "NA",
                     ...
                 )
             )
