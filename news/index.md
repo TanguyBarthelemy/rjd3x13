@@ -10,6 +10,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### [Unreleased](https://github.com/rjdverse/rjd3x13/compare/v3.8.0...HEAD)
 
+#### Changed
+
+- Updated JARS from jdplus-main to
+  [3.9.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.9.0)
+
 ### [3.8.0](https://github.com/rjdverse/rjd3x13/compare/v3.7.1...v3.8.0) - 2026-07-15
 
 #### Added
