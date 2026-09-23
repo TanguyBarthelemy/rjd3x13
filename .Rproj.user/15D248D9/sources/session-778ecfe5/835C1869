@@ -1,0 +1,25 @@
+{
+    "id": "835C1869",
+    "path": "~/work/my_pkg/R/x13.R",
+    "project_path": null,
+    "type": "r_source",
+    "hash": "2071440500",
+    "contents": "",
+    "dirty": false,
+    "created": 1790154992861.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1790156293,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1790156293905,
+    "read_only": false,
+    "read_only_alternatives": []
+}

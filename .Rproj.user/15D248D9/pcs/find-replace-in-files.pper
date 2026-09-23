@@ -1,0 +1,16 @@
+{
+    "dialog-state": {
+        "query": "rjd3x13",
+        "path": "~/work/my_pkg",
+        "regex": false,
+        "caseSensitive": false,
+        "wholeWord": false,
+        "filePatterns": [],
+        "useGitGrep": true,
+        "excludeGitIgnore": true,
+        "excludeFilePatterns": [],
+        "resultsCount": 99,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}
